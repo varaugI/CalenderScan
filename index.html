@@ -16,7 +16,12 @@
         <div style="width: 415px;height: 480px;" id="webcam-container"></div>
         <div class="container">
             <div class="row">
-                <div class="col"></div>
+                <div class="col">
+                    <div class="option">
+                        <label for="voice">Voice</label>
+                        <select name="voice" id="voice"></select>
+                    </div>
+                </div>
                 <div class="col">
                     <button class="btn btn-success" id="startS" onclick="init()" style="float: right;color: whitesmoke;">Start Scanning</button>
 			        <button class="btn btn-danger" id="stopS" onclick="stopWC()" hidden style="float: right;color: whitesmoke;">Stop Scanning</button>
@@ -30,6 +35,14 @@
             window.speechSynthesis.cancel();
             let model, webcam, label, labelContainer, maxPredictions;
             let speech = new SpeechSynthesisUtterance();
+            speechSynthesis.onvoiceschanged = function () {
+                var voices = this.getVoices();
+                
+            };
+            var option = document.createElement('option');
+		    option.value = voice.name;
+		    option.innerHTML = voice.name;
+		    voiceSelect.appendChild(option);
             speech.lang = "en-US";
             speech.volume = 1;
             speech.rate = 1;
