@@ -36,14 +36,11 @@
             let model, webcam, label, labelContainer, maxPredictions;
             var voiceSelect = document.getElementById('voice');
             let speech = new SpeechSynthesisUtterance();
-            speechSynthesis.onvoiceschanged = function () {
-                var voices = this.getVoices();
-                
-            };
-            var option = document.createElement('option');
-		    option.value = voice.name;
-		    option.innerHTML = voice.name;
-		    voiceSelect.appendChild(option.value);
+            console.log(`Voices #: ${speechSynthesis.getVoices().length}`)
+
+                speechSynthesis.getVoices().forEach(voice => {
+                    console.log(voice.name, voice.lang)
+            });
             speech.lang = "en-US";
             speech.volume = 1;
             speech.rate = 1;
