@@ -29,9 +29,7 @@
             const URL = "./";
             window.speechSynthesis.cancel();
             let model, webcam, label, labelContainer, maxPredictions;
-            let voiceSelect = document.getElementById('voice');
             let speech = new SpeechSynthesisUtterance();
-            let voices = speechSynthesis.getVoices();
             speech.lang = "en-US";
             speech.volume = 1;
             speech.rate = 1;
