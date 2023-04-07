@@ -13,7 +13,7 @@
     </head>
     <body>
         <h1 style="background-color: rgb(255, 0, 255);text-align: center;">CLASSIFY</h1>
-        <div style="width: 415px;height: 425px;" id="webcam-container"></div>
+        <div style="width: 415px;height: 600px;" id="webcam-container"></div>
         <div class="container">
             <div class="row">
                 <div class="col"></div>
@@ -25,7 +25,6 @@
         </div>
         <div id="description" hidden><h2 style="text-align: center;color:rgb(31, 31, 128)">Description</h2></div>
         <div id="label-container" style="font-size: x-large"></div>
-
         <script type="text/javascript">
             const URL = "./";
             window.speechSynthesis.cancel();
@@ -43,7 +42,7 @@
                 model = await tmImage.load(modelURL, metadataURL);
                 maxPredictions = model.getTotalClasses();        
                 const flip = true; 
-                webcam = new tmImage.Webcam(415, 425, flip);
+                webcam = new tmImage.Webcam(415, 600, flip);
                 const facingMode = {exact: "environment"};
                 await webcam.setup({facingMode});
                 await webcam.play();
@@ -164,6 +163,5 @@
                 document.getElementById('stopS').hidden = true;
             }       
         </script>
-
     </body>
 </html>
