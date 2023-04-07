@@ -18,7 +18,7 @@
             <div class="row">
                 <div class="col">
                     <div class="option">
-                        <label for="voice">Voice</label>
+                        <label for="voice">Voice and Language</label>
                         <select name="voice" id="voice"></select>
                     </div>
                 </div>
@@ -34,14 +34,9 @@
             const URL = "./";
             window.speechSynthesis.cancel();
             let model, webcam, label, labelContainer, maxPredictions;
-            var voiceSelect = document.getElementById('voice');
+            let voiceSelect = document.getElementById('voice');
             let speech = new SpeechSynthesisUtterance();
-            console.log(`Voices #: ${speechSynthesis.getVoices().length}`)
-
-                speechSynthesis.getVoices().forEach(voice => {
-                    console.log(voice.name, voice.lang)
-                    document.getElementById('voice').appendChild(voice.lang);
-            });
+            let voices = speechSynthesis.getVoices();
             speech.lang = "en-US";
             speech.volume = 1;
             speech.rate = 1;
