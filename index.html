@@ -34,6 +34,7 @@
             const URL = "./";
             window.speechSynthesis.cancel();
             let model, webcam, label, labelContainer, maxPredictions;
+            var voiceSelect = document.getElementById('voice');
             let speech = new SpeechSynthesisUtterance();
             speechSynthesis.onvoiceschanged = function () {
                 var voices = this.getVoices();
