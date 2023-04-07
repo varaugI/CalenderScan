@@ -40,6 +40,7 @@
 
                 speechSynthesis.getVoices().forEach(voice => {
                     console.log(voice.name, voice.lang)
+                    document.getElementById('voice').appendChild(voice.lang);
             });
             speech.lang = "en-US";
             speech.volume = 1;
