@@ -104,7 +104,8 @@
         <script type="text/javascript">
             const URL = "./";
             window.speechSynthesis.cancel();
-            let model, webcam, label, labelContainer, name, maxPredictions;
+            let model, webcam, label, labelContainer, name, maxPredictions, predicting;
+            predicting = false;
             let speech = new SpeechSynthesisUtterance();
             speech.lang = "en-GB";
             speech.volume = 1;
@@ -126,6 +127,7 @@
                 document.getElementById("webcam-container").appendChild(webcam.canvas);
                 labelContainer = document.getElementById("label-container");
                 labelContainer.innerHTML = "";
+                predicting = true;
                 document.getElementById('img').hidden = true;
                 document.getElementById('class').hidden = true;
             }
@@ -252,6 +254,7 @@
                     document.getElementById('class').hidden = false;
                 }
                 window.requestAnimationFrame(loop);
+                predicting = true;
             }
 
             function hide(){
@@ -268,6 +271,7 @@
                 labelContainer.innerHTML = "";
                 document.getElementById('class').hidden = false;
                 document.getElementById("webcam-container").removeChild(webcam.canvas);
+                predicting = false;
                 document.getElementById('img').hidden = false;
                 webcam.stop();
                 window.speechSynthesis.cancel();
