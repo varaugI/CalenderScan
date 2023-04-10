@@ -185,6 +185,7 @@
                 document.getElementById("webcam-container").removeChild(webcam.canvas);
                 document.getElementById('startS').hidden = false;
                 document.getElementById('stopS').hidden = true;
+                window.speechSynthesis.cancel();
             }       
         </script>
     </body>
