@@ -23,6 +23,67 @@
                 </div>
             </div>
         </div>
+        <div class="container" id="class">
+            <h2>24 Posssibilities from calender</h2>
+            <div class="row">
+                <div class="col">
+                    <ul>
+                        <li>Jaisalmer</li>
+                        <li>Victoria Memorial</li>
+                        <li>Calangute Beach</li>
+                    </ul>
+                </div>
+                <div class="col">
+                    <ul>
+                        <li>Sanchi gupta</li>
+                        <li>Shree krishna Arjun chariot</li>
+                        <li>Swaraj Dweeop(Havelock)</li>
+                    </ul>
+                </div>
+                <div class="col">
+                    <ul>
+                        <li>Mahabodhi Temple</li>
+                        <li>State of Unity</li>
+                        <li>Solophok Chardham Namchi</li>
+                    </ul>
+                </div>
+                <div class="col">
+                    <ul>
+                        <li>Rameshwaram</li>
+                        <li>Kathakali</li>
+                        <li>Rath Yatra-Puri</li>
+                    </ul>
+                </div>
+                <div class="col">
+                    <ul>
+                        <li>Hundru Falls</li>
+                        <li>Sri Venkateshvara Swami Temple</li>
+                        <li>Stone Chariot</li>
+                    </ul>
+                </div>
+                <div class="col">
+                    <ul>
+                        <li>Kedarnath Temple</li>
+                        <li>Kamakhya Temple</li>
+                        <li>Charminar</li>
+                    </ul>
+                </div>
+                <div class="col">
+                    <ul>
+                        <li>Ganesh Chaturthi</li>
+                        <li>India Gate</li>
+                        <li>Golden Temple</li>
+                    </ul>
+                </div>
+                <div class="col">
+                    <ul>
+                        <li>Taj Mahal</li>
+                        <li>Dal Lake</li>
+                        <li>Chandra Taal</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
         <div><h2 id="description" hidden style="text-align: center;color:rgb(31, 31, 128);text-decoration: underline;"></h2></div>
         <div id="label-container" style="font-size: x-large;font-family: 'Times New Roman', Times, serif;font-style: oblique;"></div>
         <script type="text/javascript">
@@ -50,6 +111,7 @@
                 document.getElementById("webcam-container").appendChild(webcam.canvas);
                 labelContainer = document.getElementById("label-container");
                 labelContainer.innerHTML = "";
+                document.getElementById('class').hidden = true;
             }
 
             async function loop() {
@@ -178,6 +240,7 @@
             function hide(){
                 document.getElementById('startS').hidden = true;
                 document.getElementById('stopS').hidden = false;
+                document.getElementById('class').hidden = true;
 		    }
 
             function stopWC(){
@@ -186,6 +249,7 @@
                 document.getElementById('stopS').hidden = true;
                 document.getElementById('description').hidden = true;
                 labelContainer.innerHTML = "";
+                document.getElementById('class').hidden = false;
                 webcam.stop();
                 document.getElementById("webcam-container").removeChild(webcam.canvas);
             }       
