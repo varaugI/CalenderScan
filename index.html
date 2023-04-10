@@ -113,7 +113,6 @@
             speech.rate = 1;
             speech.pitch = 1; 
             speech.text= "";
-            document.getElementById('stopS').hidden = true;
 
             async function init() {
                 const modelURL = URL + "model.json";
@@ -248,13 +247,11 @@
                         document.getElementById('description').hidden = false;
                         labelContainer.innerHTML = label;
                     }
-                    document.getElementById('stopS').hidden = true;
                 } else {
                     window.speechSynthesis.cancel();
                     document.getElementById('description').hidden = true;
                     labelContainer.innerHTML = "";
                     document.getElementById('class').hidden = false;
-                    document.getElementById('stopS').hidden = false;
                 }
                 window.requestAnimationFrame(loop);
             }
