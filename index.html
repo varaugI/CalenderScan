@@ -186,6 +186,8 @@
                 document.getElementById('startS').hidden = false;
                 document.getElementById('stopS').hidden = true;
                 window.speechSynthesis.cancel();
+                document.getElementById('description').hidden = true;
+                labelContainer.innerHTML = "";
             }       
         </script>
     </body>
