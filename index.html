@@ -128,7 +128,7 @@
                 document.getElementById("webcam-container").appendChild(webcam.canvas);
                 labelContainer = document.getElementById("label-container");
                 labelContainer.innerHTML = "";
-                document.getElementById('to read') = "";
+                document.getElementById('to read').innerHTML = "";
                 document.getElementById('img').hidden = true;
                 document.getElementById('class').hidden = true;
             }
@@ -247,14 +247,14 @@
                         document.getElementById('description').innerHTML = name.toUpperCase();
                         document.getElementById('description').hidden = false;
                         labelContainer.innerHTML = label;
-                        document.getElementById('to read') = "Click to close scan and listen to description";
+                        document.getElementById('to read').innerHTML = "Click to close scan and listen to description";
                     }
                 } else {
                     window.speechSynthesis.cancel();
                     document.getElementById('description').hidden = true;
                     labelContainer.innerHTML = "";
                     document.getElementById('class').hidden = false;
-                    document.getElementById('to read') = "";
+                    document.getElementById('to read').innerHTML = "";
                 }
                 window.requestAnimationFrame(loop);
             }
