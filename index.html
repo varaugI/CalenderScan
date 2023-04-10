@@ -133,6 +133,7 @@
                         }
                         hide();
                         detected = true;
+                        var Description = prediction[i].className;
                         break;
                     }
                 }
@@ -140,7 +141,7 @@
                     speech.text = label;
                     if (!window.speechSynthesis.speaking) {
                         window.speechSynthesis.speak(speech);
-                        document.getElementById('description').innerHTML = prediction[i].className.toUpperCase();
+                        document.getElementById('description').innerHTML = Description.toUpperCase();
                         document.getElementById('description').hidden = false;
                         labelContainer.innerHTML = label;
                     }
