@@ -247,6 +247,7 @@
                         document.getElementById('description').innerHTML = name.toUpperCase();
                         document.getElementById('description').hidden = false;
                         labelContainer.innerHTML = label;
+                        document.getElementById('stopS').hidden = true;
                     }
                 } else {
                     window.speechSynthesis.cancel();
