@@ -18,7 +18,7 @@
         </div>
         <div class="container">
             <div class="row">
-                <div class="col"></div>
+                <div id="to read" class="col"></div>
                 <div class="col">
                     <button class="btn btn-success" id="startS" onclick="init()" style="float: right;color: whitesmoke;">Start Scanning</button>
 			        <button class="btn btn-danger" id="stopS" onclick="stopWC()" hidden style="float: right;color: whitesmoke;">Stop Scanning</button>
@@ -128,6 +128,7 @@
                 document.getElementById("webcam-container").appendChild(webcam.canvas);
                 labelContainer = document.getElementById("label-container");
                 labelContainer.innerHTML = "";
+                document.getElementById('to read') = "";
                 document.getElementById('img').hidden = true;
                 document.getElementById('class').hidden = true;
             }
@@ -246,12 +247,14 @@
                         document.getElementById('description').innerHTML = name.toUpperCase();
                         document.getElementById('description').hidden = false;
                         labelContainer.innerHTML = label;
+                        document.getElementById('to read') = "Click to close scan and listen to description";
                     }
                 } else {
                     window.speechSynthesis.cancel();
                     document.getElementById('description').hidden = true;
                     labelContainer.innerHTML = "";
                     document.getElementById('class').hidden = false;
+                    document.getElementById('to read') = "";
                 }
                 window.requestAnimationFrame(loop);
             }
