@@ -13,7 +13,7 @@
     </head>
     <body>
         <h1 style="background-color: rgb(180, 255, 94);text-align: center;">CLASSIFY</h1>
-        <div style="height: 425px;" id="webcam-container"></div>
+        <div id="webcam-container"></div>
         <div class="container">
             <div class="row">
                 <div class="col"></div>
@@ -42,7 +42,7 @@
                 model = await tmImage.load(modelURL, metadataURL);
                 maxPredictions = model.getTotalClasses();        
                 const flip = false; 
-                webcam = new tmImage.Webcam(415, 425, flip);
+                webcam = new tmImage.Webcam(1280, 720, flip);
                 const facingMode = {exact: "environment"};
                 await webcam.setup({facingMode});
                 await webcam.play();
