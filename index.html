@@ -247,11 +247,13 @@
                         document.getElementById('description').hidden = false;
                         labelContainer.innerHTML = label;
                     }
+                    document.getElementById('stopS').hidden = true;
                 } else {
                     window.speechSynthesis.cancel();
                     document.getElementById('description').hidden = true;
                     labelContainer.innerHTML = "";
                     document.getElementById('class').hidden = false;
+                    document.getElementById('stopS').hidden = false;
                 }
                 window.requestAnimationFrame(loop);
             }
