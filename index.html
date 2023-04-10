@@ -263,15 +263,6 @@
 		    }
 
             function stopWC(){
-                if (detected){
-                    if (!window.speechSynthesis.speaking) {
-                        window.speechSynthesis.cancel();
-                    }
-                    window.speechSynthesis.cancel();
-                }
-                else{
-                    window.speechSynthesis.cancel();
-                }
                 document.getElementById('startS').hidden = false;
                 document.getElementById('stopS').hidden = true;
                 document.getElementById('description').hidden = true;
