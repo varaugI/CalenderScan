@@ -233,6 +233,7 @@
                             name = "chandra taal";
                             label =  "Chandratal or Chandra Tal or Chandra Taal or Chander Taal or simply Moon Lake is a barren but beautiful lake located at a height of 14100 feet in Himachal Pradesh in northern India. It comes under Spiti and Lahaul district of Himachal Pradesh and is situated at a distance of six km from Kumzum Pass.";   
                         }
+                        hide();
                         detected = true;
                         break;
                     }
@@ -244,21 +245,19 @@
                         document.getElementById('description').innerHTML = name.toUpperCase();
                         document.getElementById('description').hidden = false;
                         labelContainer.innerHTML = label;
-                        document.getElementById('stopS').hidden = true;
                     }
                 } else {
                     window.speechSynthesis.cancel();
                     document.getElementById('description').hidden = true;
                     labelContainer.innerHTML = "";
                     document.getElementById('class').hidden = false;
-                    document.getElementById('stopS').hidden = false;
                 }
                 window.requestAnimationFrame(loop);
-                hide();
             }
 
             function hide(){
                 document.getElementById('startS').hidden = true;
+                document.getElementById('stopS').hidden = false;
                 document.getElementById('class').hidden = true;
                 document.getElementById('img').hidden = true;
 		    }
