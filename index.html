@@ -130,6 +130,7 @@
                 labelContainer.innerHTML = "";
                 document.getElementById('img').hidden = true;
                 document.getElementById('class').hidden = true;
+                document.getElementById('stopS').hidden = false;
             }
 
             async function loop() {
@@ -247,7 +248,6 @@
                         document.getElementById('description').innerHTML = name.toUpperCase();
                         document.getElementById('description').hidden = false;
                         labelContainer.innerHTML = label;
-                        document.getElementById('stopS').hidden = true;
                     }
                 } else {
                     window.speechSynthesis.cancel();
@@ -260,7 +260,7 @@
 
             function hide(){
                 document.getElementById('startS').hidden = true;
-                document.getElementById('stopS').hidden = false;
+                document.getElementById('stopS').hidden = true;
                 document.getElementById('class').hidden = true;
                 document.getElementById('img').hidden = true;
 		    }
