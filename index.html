@@ -271,6 +271,7 @@
                 document.getElementById('description').hidden = true;
                 labelContainer.innerHTML = "";
                 document.getElementById('class').hidden = false;
+                document.getElementById("webcam-container").removeChild(webcam.canvas);
                 document.getElementById('img').hidden = false;
                 webcam.stop();
                 window.speechSynthesis.cancel();
