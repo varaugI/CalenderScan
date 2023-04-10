@@ -104,8 +104,8 @@
         <script type="text/javascript">
             const URL = "./";
             window.speechSynthesis.cancel();
-            let model, webcam, label, labelContainer, name, maxPredictions, detected;
-            detected = false;
+            let model, webcam, label, labelContainer, name, maxPredictions, looping;
+            looping = true;
             let speech = new SpeechSynthesisUtterance();
             speech.lang = "en-GB";
             speech.volume = 1;
@@ -132,9 +132,10 @@
             }
 
             async function loop() {
+                looping = true;
                 webcam.update(); 
                 const prediction = await model.predict(webcam.canvas);
-                detected = false;
+                let detected = false;
                 for (let i = 0; i < maxPredictions; i++) {
                     if(prediction[i].probability.toFixed(2) * 100 > 96){
                         if(prediction[i].className === "Jaisalmer" ){
@@ -263,8 +264,7 @@
 		    }
 
             function stopWC(){
-                window.speechSynthesis.cancel();
-                detected = false;
+                looping = false;
                 document.getElementById('startS').hidden = false;
                 document.getElementById('stopS').hidden = true;
                 document.getElementById('description').hidden = true;
