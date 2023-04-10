@@ -104,8 +104,7 @@
         <script type="text/javascript">
             const URL = "./";
             window.speechSynthesis.cancel();
-            let model, webcam, label, labelContainer, name, maxPredictions, looping;
-            looping = true;
+            let model, webcam, label, labelContainer, name, maxPredictions;
             let detected = false;
             let speech = new SpeechSynthesisUtterance();
             speech.lang = "en-GB";
@@ -133,7 +132,6 @@
             }
 
             async function loop() {
-                if(!looping) return;
                 webcam.update(); 
                 const prediction = await model.predict(webcam.canvas);
                 detected = false;
@@ -265,7 +263,6 @@
 		    }
 
             function stopWC(){
-                looping = false;
                 document.getElementById('startS').hidden = false;
                 document.getElementById('stopS').hidden = true;
                 document.getElementById('description').hidden = true;
