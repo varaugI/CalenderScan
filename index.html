@@ -13,7 +13,9 @@
     </head>
     <body>
         <h1 style="background-color: rgb(180, 255, 94);text-align: center;">CLASSIFY</h1>
-        <div style="width: 415px;height: 425px;" id="webcam-container"></div>
+        <div style="width: 415px;height: 425px;" id="webcam-container">
+            <img id="img" src="camera.png" style="width: 415px;height: 425px;">
+        </div>
         <div class="container">
             <div class="row">
                 <div class="col"></div>
@@ -107,6 +109,7 @@
                 document.getElementById("webcam-container").appendChild(webcam.canvas);
                 labelContainer = document.getElementById("label-container");
                 labelContainer.innerHTML = "";
+                document.getElementById('img').hidden = true;
                 document.getElementById('class').hidden = true;
             }
 
@@ -238,6 +241,7 @@
                 document.getElementById('startS').hidden = true;
                 document.getElementById('stopS').hidden = false;
                 document.getElementById('class').hidden = true;
+                document.getElementById('img').hidden = true;
 		    }
 
             function stopWC(){
@@ -249,6 +253,7 @@
                 document.getElementById('class').hidden = false;
                 webcam.stop();
                 document.getElementById("webcam-container").removeChild(webcam.canvas);
+                document.getElementById('img').hidden = false;
             }       
         </script>
     </body>
