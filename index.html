@@ -107,6 +107,7 @@
             window.speechSynthesis.cancel();
             let model, webcam, label, labelContainer, name, maxPredictions,detected;
             detected = false;
+	    $("#startS").click(function(){$("#startS").hide()});
             let speech = new SpeechSynthesisUtterance();
             speech.lang = "en-GB";
             speech.volume = 1;
